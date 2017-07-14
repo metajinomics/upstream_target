@@ -39,13 +39,17 @@ def main():
                     fstart = feat.location.start
                     fend = feat.location.end
                     strand = feat.location.strand
-
-                    print ">%s\t%s\t%s\t%s" %(name, fstart, fend, strand)
+                    
                     if strand == 1:
-                        print gb_record.seq[int(fstart)-num:int(fstart)]
+                        st = int(fstart)-num
+                        ed = int(fstart) 
+                        print ">%s\t%s\t%s\t%s\t%s" %(genome_name,name, st, ed, strand)
+                        print gb_record.seq[st:ed]
                     elif strand == -1:
-                        print gb_record.seq[int(fend):int(fend)+num].reverse_complement()
-
+                        st = int(fend)
+                        ed = int(fend)+num
+                        print ">%s\t%s\t%s\t%s\t%s" %(genome_name,name, st, ed, strand)
+                        print gb_record.seq[st:ed].reverse_complement()
 
 if __name__ == '__main__':
     main()
