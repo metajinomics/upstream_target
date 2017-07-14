@@ -11,6 +11,7 @@ from Bio import SeqIO
 
 
 def main():
+    num = 1000
     d = {}
     for line in open(sys.argv[2],'r'):
         gene_name = line.strip()
@@ -41,9 +42,9 @@ def main():
 
                     print ">%s\t%s\t%s\t%s" %(name, fstart, fend, strand)
                     if strand == 1:
-                        print gb_record.seq[int(fstart)-400:int(fstart)]
+                        print gb_record.seq[int(fstart)-num:int(fstart)]
                     elif strand == -1:
-                        print gb_record.seq[int(fend):int(fend)+400].reverse_complement()
+                        print gb_record.seq[int(fend):int(fend)+num].reverse_complement()
 
 
 if __name__ == '__main__':
