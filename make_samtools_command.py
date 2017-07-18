@@ -23,7 +23,7 @@ def main():
         if not line[:1] == ">":
             continue
         spl = line[1:].strip().split('\t')
-        print "samtools mpileup -r "+d[spl[0]]+":"+spl[2]+"-"+spl[3]+" -f GRCm38.p5.genome.fa -o "+spl[1]+".pileup "+bam
+        print "samtools mpileup -r "+d[spl[0]]+":"+spl[2]+"-"+spl[3]+" -f GRCm38.p5.genome.fa -o "+bam+spl[1]+".pileup "+bam
 
 if __name__ == '__main__':
     main()
