@@ -42,11 +42,11 @@ def main():
                     
                     if strand == 1:
                         st = int(fstart)-num
-                        ed = int(fstart) 
+                        ed = int(fend) 
                         print ">%s\t%s\t%s\t%s\t%s" %(genome_name,name, st, ed, strand)
                         print gb_record.seq[st:ed]
                     elif strand == -1:
-                        st = int(fend)
+                        st = int(fstart)
                         ed = int(fend)+num
                         print ">%s\t%s\t%s\t%s\t%s" %(genome_name,name, st, ed, strand)
                         print gb_record.seq[st:ed].reverse_complement()
