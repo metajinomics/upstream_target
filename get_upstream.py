@@ -41,12 +41,12 @@ def main():
                     strand = feat.location.strand
                     
                     if strand == 1:
-                        st = int(fstart)-num
+                        st = int(fend)-num
                         ed = int(fend) 
                         print ">%s\t%s\t%s\t%s\t%s" %(genome_name,name, st, ed, strand)
                         print gb_record.seq[st:ed]
                     elif strand == -1:
-                        st = int(fstart)
+                        st = int(fend)
                         ed = int(fend)+num
                         print ">%s\t%s\t%s\t%s\t%s" %(genome_name,name, st, ed, strand)
                         print gb_record.seq[st:ed].reverse_complement()
